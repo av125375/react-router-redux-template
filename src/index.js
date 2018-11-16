@@ -9,12 +9,14 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import reducers from './reducers';
 import ReduxPromise from 'redux-promise';
+import { devToolsEnhancer } from 'redux-devtools-extension';
 
 
 // creating a store for the redux structure
 const store = createStore(
     reducers,
-    applyMiddleware(logger, ReduxPromise)
+    // applyMiddleware(logger, ReduxPromise)
+    devToolsEnhancer()
 );
 
 ReactDOM.render(
